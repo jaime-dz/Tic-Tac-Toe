@@ -1,26 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "structures.h"
+#include "save.h"
+#include "load.h"
+#include "play_against_machine.h"
+#include "playvs.h"
 int main(){
-    board b;
-    int opc_menu;
-    char player_symbol;
+    char board[N][N];
+    int opt_menu;
     do {
         printf("Welcome to Tic Tac Toe!\n\n");
-        printf("What do you want to do?\n1)Play\n2)Play against the machine\n3)Exit\n");
-        scanf("%d",&opc_menu);
-        do{
-            printf("Which symbol do you want to play as? (X,0)\n");
-            scanf("%c",&player_symbol);
-        }while(player_symbol!='X'||player_symbol!='0');
+        printf("What do you want to do?\n1)Play\n2)Play against the machine\n3)Load\n4)Save\n5)Exit\n");
+        scanf("%d",&opt_menu);
 
         system("clear");
-        init_matr(b.bo);
+        switch(opt_menu){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                int fun=load_board(board);
+                break;
+            case 4:
+                break;
+            case 5:
+                exit(1);
+                break;
+            default:
+                printf("Please enter a valid option\n");
+                break;
+        }
         
 
         
-    }while(opc_menu!=3||opc_menu<1||opc_menu>3);
+    }while(opt_menu<1 || opt_menu>5);
     
-
+    return 0;
 }
-
