@@ -16,13 +16,15 @@ int main(){
         system("clear");
         switch(opt_menu){
             case 1:
+            int funp=playvs(board);
                 break;
             case 2:
                 break;
             case 3:
-                int fun=load_board(board);
+                int funl=load_board(board);
                 break;
             case 4:
+                int funs=save_board(board);
                 break;
             case 5:
                 exit(1);

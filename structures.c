@@ -24,3 +24,13 @@ void print_matr(char **m){
         printf("\n- - -\n");
     }    
 }
+int is_complete_matrix(char **m){
+    int i,j,sol=1;  //initially complete
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            if(m[i][j]=='-')
+                sol=0;  //incomplete
+        }
+    }
+    return sol;
+}
